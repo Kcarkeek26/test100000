@@ -28,6 +28,31 @@
     </nav>
     <h1>Gallery</h1>
 </section>
+    <style>
+.plus-upload {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+}
+.plus-upload input {
+    display: none;
+}
+</style>
+
+<div class="plus-upload" onclick="document.getElementById('imageInput').click();">
+    +
+    <form id="uploadForm" action="/upload_images" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="item_id" value="1"> <!-- or dynamically pass product ID -->
+        <input type="file" id="imageInput" name="images" accept="image/*" multiple onchange="document.getElementById('uploadForm').submit();">
+    </form>
+</div>
 
 <section class="slide">
     <div class="wrapper">
